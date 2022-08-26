@@ -24,7 +24,7 @@ export default function Login(props) {
         }
     
             fetch(`${BASE_URL}/login`, options)
-            .then(response => response.status == 200 ?  : navigate('/') )
+            .then(response => response.status == 200 ? navigate('/') : navigate('/home') )
             .catch(error => {
                 console.log(error)
                 alert("couldn't attempt")
