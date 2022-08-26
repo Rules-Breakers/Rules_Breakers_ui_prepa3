@@ -1,0 +1,61 @@
+.create-form{
+    padding: 3%;
+    width: 500px;
+    border-radius: 8px;
+    background-color: #343a40;
+    position: absolute;
+    left: 33%;
+    top: 8%;
+    color: #f8f9fa;
+    animation: appearance 1s linear;
+}
+#close{
+    cursor: pointer;
+}
+.create-form input{
+    border: none;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.create-form label{
+    font-weight: bold;
+    font-size: 12px;
+}
+.create-form div{
+    margin: 3% 0%;
+}
+
+forget-pass {
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+}
+
+.create-form button{
+    border: none;
+}
+.create-form .create{
+    width: 100%;
+    background-color:  #28a745;
+    color: white;
+    margin: 5% auto 0 auto;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 8px;
+}
+
+.create-form .create:hover{
+    background-color: green;
+    transition: 0.5s;
+}
+
+#select{
+    height: 30px;
+}
+
+@keyframes appearance {
+    from{
+        top: -100%;
+    }
+}
