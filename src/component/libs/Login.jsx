@@ -38,13 +38,7 @@ return(
     <div className="container" id="container" >
 		<div className="form-container sign-in-container">
 			<form action="#" onSubmit={handlesubmit}>
-				<h1>Sign In</h1>
-				<div className="social-container">
-					<a  className="social" ><i className="fab fa-facebook "></i></a>
-					<a  className="social" ><i className="fab fa-google"></i></a>
-					<a  className="social" ><i className="fab fa-github"></i></a>
-				</div>
-				<span>or use your account</span>
+				<h1 className="title">Sign In</h1>
                 <Button type ="text" placeholder="USERNAME" setValue={setUsername} />
                 <Button type ="password" placeholder="PASSWORD" setValue={setPassword} />
 				<p>New there , click<a href="#" color="yellow" onClick={()=>setChoose(true)} ><b> SIGN UP</b></a></p>
