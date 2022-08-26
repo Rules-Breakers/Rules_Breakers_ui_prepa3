@@ -1,10 +1,11 @@
 import React from "react";
+import "./UpdateBook.css";
 
 const Input = (props,) => {
     const {value, handleChange} = props;
     return(
         <>
-            <input type="text" className="MyInput" defaultValue={value} onChange={(e) => handleChange(e.target.value)}/>
+            <input type="text" defaultValue={value} onChange={(e) => handleChange(e.target.value)}/>
         </>
     )
 }
