@@ -34,6 +34,7 @@ return(
  <>  
   {
     choose ? <SignUp/> :
+<div className="body">
     <div className="container" id="container" >
 		<div className="form-container sign-in-container">
 			<form action="#" onSubmit={handlesubmit}>
@@ -57,6 +58,7 @@ return(
 				</div>
 			</div>
 		</div>  
+    </div>
     } 
  </>
 )
