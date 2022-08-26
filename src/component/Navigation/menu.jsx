@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./menu.css";
 import avatar from "./image/bg.jpg";
 import logo from "./image/logo.png";
 
 
 export function Menu() {
+  const navigate = useNavigate()
     return(
         <>
             <header>
@@ -31,7 +32,8 @@ export function Menu() {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" class="btn btn-danger my-2">Se deconnecter</button>
+       
+          <button type="button" class="btn btn-danger my-2" onClick={()=> navigate('/')}>Se deconnecter</button>
         </div>
       </div>
     </div>
