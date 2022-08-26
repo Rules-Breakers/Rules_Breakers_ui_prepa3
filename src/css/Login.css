@@ -26,9 +26,9 @@
     color:  #4267B2;
     background-color: #fff;
 }
-h1 {
+.title {
 	font-weight: bold;
-	margin: 0;
+	margin: 10% 0;
 }
 
 h2 {
@@ -54,12 +54,13 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.button {
 	border-radius: 20px;
-	border: 1px solid #7e3c31;
-	background-color: #864034;
+	margin-top: 1%;
+	border: 1px solid rgb(180, 121, 113);
+	background-color: rgb(180, 121, 113);
 	color: #FFFFFF;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
@@ -68,11 +69,11 @@ button {
 	cursor: pointer;
 }
 
-button:active {
+.button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.button:focus {
 	outline: none;
 }
 
@@ -87,7 +88,7 @@ form {
 	text-align: center;
 }
 
-input {
+.input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -96,7 +97,7 @@ input {
 	outline: #FF4B2B;
 }
 
-.container {
+.container1 {
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
