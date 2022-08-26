@@ -39,10 +39,10 @@ return(
 		<div className="form-container sign-in-container">
 			<form action="#" onSubmit={handlesubmit}>
 				<h1 className="title">Sign In</h1>
-                <Button type ="text" placeholder="USERNAME" setValue={setUsername} />
-                <Button type ="password" placeholder="PASSWORD" setValue={setPassword} />
+                <Button type ="text" placeholder="Username..." setValue={setUsername} />
+                <Button type ="password" placeholder="Password..." setValue={setPassword} />
 				<p>New there , click<a href="#" color="yellow" onClick={()=>setChoose(true)} ><b> SIGN UP</b></a></p>
-				<button onClick={()=>getData()} className='button' >Sign In</button>
+				<button onClick={()=>getData()} className='button1' >Sign In</button>
 			</form>
 		</div>
 		<div className="overlay-container">

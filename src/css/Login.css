@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
 * {
 	box-sizing: border-box;
 }
@@ -34,7 +32,10 @@
 h2 {
 	text-align: center;
 }
-
+h4{
+	font-weight: normal;
+	font-size: 25px;
+}
 p {
 	font-size: 14px;
 	font-weight: 100;
@@ -54,11 +55,11 @@ a {
 	margin: 15px 0;
 }
 
-.button {
+.button1 {
 	border-radius: 20px;
 	margin-top: 1%;
-	border: 1px solid rgb(180, 121, 113);
-	background-color: rgb(180, 121, 113);
+	border: 1px solid #4285f4;
+	background-color: #4285f4;
 	color: #FFFFFF;
 	font-size: 10px;
 	font-weight: bold;
@@ -75,6 +76,7 @@ a {
 
 .button:focus {
 	outline: none;
+	
 }
 
 form {
@@ -197,7 +199,7 @@ form {
 	transition: transform 0.6s ease-in-out;
 	background-image: url(.././component/image/back.jpg);
 	background-size: cover;
-	background-position-x: -150px ;
+	background-position-x: -200px ;
 	background-repeat: no-repeat;
 }
 .container.right-panel-active .overlay-left {
