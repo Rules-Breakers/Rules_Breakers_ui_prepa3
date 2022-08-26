@@ -3,6 +3,7 @@ import '../../css/Login.css';
 import Login from "./Login";
 import Button from "./Button";
 import { useNavigate } from "react-router";
+
 export default function SignUp(props) {
     const handlesubmit=(e)=>{
         e.preventDefault()
@@ -36,30 +37,24 @@ return(
  <>  { 
     choose ? <Login/> :
 <div className="body">
-    <div className="container" id="container" >
-    <div className="form-container sign-in-container">
-        <form action="#">
-            <h1>Sign Up</h1>
-            <div className="social-container">
-                <a  className="social" ><i className="fab fa-facebook "></i></a>
-                <a  className="social" ><i className="fab fa-google"></i></a>
-                <a  className="social" ><i className="fab fa-github"></i></a>
-            </div>
-            <span>or use your account</span>
-            <Button type ="text" placeholder="USERNAME" setValue={setUsername} />
-            <Button type ="password" placeholder="PASSWORD" setValue={setPassword} />
-            <p>New there , click<a href="#" color="blue" onClick={()=>setChoose(true)} ><b> LOGIN IN</b></a></p>
-            <button onClick={()=>addAdmin}>Sign Up</button>
-        </form>
+    <div className="container1" id="container" >
+		<div className="form-container sign-in-container">
+			<form action="#" onSubmit={handlesubmit}>
+				<h1 className="title">Sign Up</h1>
+                <Button type ="text" placeholder="USERNAME" setValue={setUsername} />
+                <Button type ="password" placeholder="PASSWORD" setValue={setPassword} />
+				<p>Already member , click<a href="#" color="yellow" onClick={()=>setChoose(true)} ><b> SIGN IN</b></a></p>
+				<button className="button">Sign Up</button>
+			</form>
+		</div>
+		<div className="overlay-container">
+			<div className="overlay">
+					<div className="overlay-panel overlay-right">
+					</div>
+				</div>
+			</div>
+		</div>  
     </div>
-    <div className="overlay-container">
-        <div className="overlay">
-                <div className="overlay-panel overlay-right">
-                </div>
-            </div>
-        </div>
-    </div> 
-</div> 
     }
  </>
 )
