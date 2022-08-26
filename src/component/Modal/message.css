@@ -1,0 +1,22 @@
+.card{
+    width: 20%;
+    margin: auto;
+    animation: zoomer 0.5s linear ;
+}
+
+.rounded-circle{
+    width: 50px;
+    margin: auto;
+    font-weight: bold;
+    padding: 3% 0;
+}
+
+
+@keyframes zoomer {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}

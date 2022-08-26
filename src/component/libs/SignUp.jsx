@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BASE_URL } from "../script/BaseUrl";
 import '../../css/Login.css';
 import Login from "./Login";
 import Button from "./Button";
@@ -36,6 +35,7 @@ export default function SignUp(props) {
 return(
  <>  { 
     choose ? <Login/> :
+<div className="body">
     <div className="container" id="container" >
     <div className="form-container sign-in-container">
         <form action="#">
@@ -58,7 +58,8 @@ return(
                 </div>
             </div>
         </div>
-    </div>  
+    </div> 
+</div> 
     }
  </>
 )

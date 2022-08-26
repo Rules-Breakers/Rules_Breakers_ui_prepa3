@@ -1,9 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from 'react-router';
 import { Route } from 'react-router';
-import Login from './component/libs/Login';
+import './App.css';
+import HomePage from './pages/HomePage';
 import UpdateForm from "./component/updateBook/UpdateForm";
-
 function App() {
   return (
 <>
@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path='/'
         element={
-          <Login/>
+          <HomePage/>        
         }
       />
       <Route path='/home'
