@@ -4,6 +4,7 @@ import { Footer } from "../Footer/Footer";
 import { Form } from "../Form/Form";
 import { Menu } from "../Navigation/menu"
 import { Table } from "../Table/Table";
+import "../bootstrap/bootstrap.css"
 import "./header.css"
 
 

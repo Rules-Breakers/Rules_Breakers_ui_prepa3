@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pagination } from "../Pagination/Pagination";
 import "./table.css"
 
 
-export function Table() {
+export function Table({children, setHead}) {
+    const [emprunt, setEmprunt] = useState(false);
     /*function printDocument() {  
         const input = document.getElementById('pdfdiv');  
         html2canvas(input)  
@@ -17,6 +18,17 @@ export function Table() {
             pdf.save("download.pdf");  
           });  
       } */
+
+    function filter(e) {
+        if(e.target.value === 'emprunt'){
+            setEmprunt(true)
+            setHead(true)
+        }
+        else{
+            setEmprunt(false)
+            setHead(false)
+        }
+    }
     return(
         <>
            <div className="container">
@@ -25,39 +37,90 @@ export function Table() {
                 <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
                 <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
             </div>
-            <select name="" id="" className="btn btn-sm btn-outline-secondary">
-                <option value="">Filter</option>
-                <option value="">Filter</option>
-                <option value="">Filter</option>
-                <option value="">Filter</option>
+            <select name="" id="" className="btn btn-sm btn-outline-secondary" onChange={filter}>
+                <option value="titre">Titre</option>
+                <option value="auteur">Auteur</option>
+                <option value="emprunt">Emprunt</option>
+                <option value="category">Category</option>
+                <option value="page">Page</option>
             </select>
             </div>
             <table className="table-striped rounded-2 shadow text-center" id="pdfdiv">
                 <thead>
-                    <th className="p-2">title1</th>
-                    <th className="p-2">title2</th>
-                    <th className="p-2">title3</th>
+                    { children }
                 </thead>
                 <tbody>
                     <tr>
                         <td className="p-2">item1</td>
                         <td className="p-2">item2</td>
                         <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
                     </tr>
                     <tr>
                         <td className="p-2">item1</td>
                         <td className="p-2">item2</td>
                         <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
                     </tr>
                     <tr>
                         <td className="p-2">item1</td>
                         <td className="p-2">item2</td>
                         <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
                     </tr>
                     <tr>
                         <td className="p-2">item1</td>
                         <td className="p-2">item2</td>
                         <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
+                    </tr>
+                    <tr>
+                        <td className="p-2">item1</td>
+                        <td className="p-2">item2</td>
+                        <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
+                    </tr>
+                    <tr>
+                        <td className="p-2">item1</td>
+                        <td className="p-2">item2</td>
+                        <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
+                    </tr>
+                    <tr>
+                        <td className="p-2">item1</td>
+                        <td className="p-2">item2</td>
+                        <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
+                    </tr>
+                    <tr>
+                        <td className="p-2">item1</td>
+                        <td className="p-2">item2</td>
+                        <td className="p-2">item3</td>
+                        <td className="p-2">item4</td>
+                        {
+                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                            }
                     </tr>
                 </tbody>
             </table>

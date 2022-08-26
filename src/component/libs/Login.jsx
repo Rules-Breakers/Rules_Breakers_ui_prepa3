@@ -35,7 +35,7 @@ return(
   {
     choose ? <SignUp/> :
 <div className="body">
-    <div className="container" id="container" >
+    <div className="container1" id="container" >
 		<div className="form-container sign-in-container">
 			<form action="#" onSubmit={handlesubmit}>
 				<h1 className="title">Sign In</h1>

@@ -9,10 +9,10 @@ export function Menu() {
     return(
         <>
             <header>
-    <div class="px-3 py-2 bg-dark sticky-top">
+    <div class="px-3 bg-dark sticky-top" >
       <div class="container d-flex justify-content-between">
         <div>
-            <img src={logo} alt="" className="avatar" />
+            <img src={logo} alt="" className="avatar my-2" />
         </div>
         <div class="justify-content-lg-start">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
@@ -20,10 +20,10 @@ export function Menu() {
               <NavLink className="nav-link text-white" to="/">Dashboard</NavLink>
             </li>
             <li>
-              <NavLink className="nav-link text-white" to="/"> Administration</NavLink>
+              <NavLink className="nav-link text-white" to="/"> Livres</NavLink>
             </li>
             <li>
-              <NavLink className="nav-link text-white" to="/"> Students</NavLink>
+              <NavLink className="nav-link text-white" to="/"> Historique</NavLink>
             </li>
             <li>
               <NavLink className="nav-link text-white" to="/">Settings</NavLink>
@@ -31,7 +31,7 @@ export function Menu() {
           </ul>
         </div>
         <div class="text-end">
-          <button type="button" class="btn btn-primary mx-3">Add User</button>
+          <button type="button" class="btn btn-danger my-2">Se deconnecter</button>
         </div>
       </div>
     </div>
