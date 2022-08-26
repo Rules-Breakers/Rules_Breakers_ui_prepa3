@@ -11,3 +11,7 @@ table{
 tr:hover{
     border-left: 2px solid orange;
 }
+
+.btn{
+    font-size: 12px;
+}
