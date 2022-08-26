@@ -3,6 +3,7 @@ import { Routes } from 'react-router';
 import { Route } from 'react-router';
 import './App.css';
 import HomePage from './pages/HomePage';
+import Historique from './component/History/Historique';
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
         }
       />
       <Route path='/home'
+      />
+       <Route path='/history' 
+        element={
+          <Historique/>        
+        }
       />
     </Routes>
   </BrowserRouter>

@@ -1,0 +1,40 @@
+.Container2{
+    margin-top: 2%;
+    background-image:linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../Footer/image/footer.jpg);
+    width: 57vw;
+    box-shadow: 2px 2px 2px 2px black;
+    align-items: center;
+    justify-content: center;
+    margin-left: 22%;
+}
+
+.ttle{
+    text-align: center;
+    font-size: x-large;
+    margin-left : 0;
+    color: white;
+    padding-top: 5%;
+}
+
+h3{
+    margin-right: 6%;
+    border-bottom: 3px solid white;
+    width: 25vw;
+    text-align: center;
+    margin-left : 230px;
+    color: white;
+}
+
+.Timing{
+    border: 2px solid white;
+    width: 500px;
+    margin-left: 150px;
+    padding-bottom: 5%;
+}
+
+.time{
+    font-size: smaller;
+    margin-left : 190px;
+    color: white;
+    padding-top: 5%;
+}
