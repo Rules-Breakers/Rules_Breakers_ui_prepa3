@@ -3,8 +3,7 @@ import { Routes } from 'react-router';
 import { Route } from 'react-router';
 import './App.css';
 import HomePage from './pages/HomePage';
-import UpdateForm from "./component/UpdateBook/UpdateForm";
-import AddForm from "./component/AddBook/AddForm";
+
 function App() {
   return (
 <>
@@ -16,9 +15,6 @@ function App() {
         }
       />
       <Route path='/home'
-             element={
-        <AddForm/>
-      }
       />
     </Routes>
   </BrowserRouter>
