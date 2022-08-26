@@ -11,7 +11,6 @@ const UpdateForm = () => {
     const [category, setCategory] = useState("Category");
     const [pages, setPages] = useState("12");
     return(
-        <div className="container">
            <div className="update-book-container">
                <form action="src/component/updateBook/UpdateForm#" onSubmit={handleSubmit}>
                  <h4>Change or update book's informations</h4>
@@ -22,7 +21,6 @@ const UpdateForm = () => {
                    <button className="update-button">Update</button>
                </form>
            </div>
-        </div>
     )
 }
 export default UpdateForm;
