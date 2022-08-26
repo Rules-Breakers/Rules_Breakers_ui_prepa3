@@ -7,11 +7,43 @@ table{
 #table-action{
     float: right;
 }
-
+option{
+    cursor: pointer;
+}
 tr:hover{
     border-left: 2px solid orange;
 }
 
 .btn{
     font-size: 12px;
+}
+.button2 {
+	border-radius: 20px;
+	margin-top: 1%;
+	border:0 solid rgba(247, 65, 65, 0.507);
+	background-color: rgba(247, 65, 65, 0.664);
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 7px 15px;
+    margin-left: 3%;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+}
+.button3{
+	border-radius: 20px;
+	margin-top: 1%;
+	border: 0px solid #4286f45b;
+	background-color: #4286f4ab;
+	color: #FFFFFF;
+	font-size: 10px;
+    margin-left: 23px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	padding: 7px 15px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
 }

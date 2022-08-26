@@ -5,7 +5,7 @@ const Input = (props,) => {
     const {value, handleChange} = props;
     return(
         <>
-            <input type="text" defaultValue={value} onChange={(e) => handleChange(e.target.value)}/>
+            <input type="text" className="input1" placeholder={value} onChange={(e) => handleChange(e.target.value)}/>
         </>
     )
 }

@@ -1,22 +1,21 @@
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./menu.css";
-import avatar from "./image/bg.jpg";
-import logo from "./image/logo.png";
+import logo from "./image/book.png";
 
 
 export function Menu() {
   const navigate = useNavigate()
     return(
         <>
-            <header>
-    <div class="px-3 bg-dark sticky-top" >
-      <div class="container d-flex justify-content-between">
+  <header>
+    <div className="px-3 navbar" >
+      <div className="container d-flex justify-content-between">
         <div>
-            <img src={logo} alt="" className="avatar my-2" />
+            <img src={logo} alt="" className="avatar my-2" onClick={()=>navigate('/home')} />
         </div>
-        <div class="justify-content-lg-start">
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+        <div className="justify-content-lg-start">
+          <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
               <NavLink className="nav-link text-white" to="/">Dashboard</NavLink>
             </li>
