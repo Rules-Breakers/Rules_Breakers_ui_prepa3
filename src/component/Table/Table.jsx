@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddForm from "../AddBook/AddForm";
 import { Pagination } from "../Pagination/Pagination";
 import "./table.css"
 
@@ -18,7 +19,8 @@ export function Table({children, setHead}) {
             pdf.save("download.pdf");  
           });  
       } */
-
+        const [showAdd , setShowAdd] = useState(false)
+        const close = ()=> setShowAdd(false)
     function filter(e) {
         if(e.target.value === 'emprunt'){
             setEmprunt(true)
@@ -31,9 +33,13 @@ export function Table({children, setHead}) {
     }
     return(
         <>
-           <div className="container">
+        {
+            showAdd ? <AddForm close={close} showAdd={showAdd} /> : <></>
+        }
+           <div className="container" >
            <div className="btn-toolbar mb-2 mb-md-0 my-2" id="table-action">
-            <div className="btn-group me-2">
+            <div className="btn-group me-2" >
+                <button type="button" className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAdd(true)} >Add</button>
                 <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
                 <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
             </div>
@@ -56,7 +62,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -65,7 +71,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -74,7 +80,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -83,7 +89,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -92,7 +98,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -101,7 +107,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -110,7 +116,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                     <tr>
@@ -119,7 +125,7 @@ export function Table({children, setHead}) {
                         <td className="p-2">item3</td>
                         <td className="p-2">item4</td>
                         {
-                                emprunt ? <td>1</td> : <td><button className="btn btn-primary mx-3">Emprunter</button><button className="btn btn-danger">Rendre</button></td>
+                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
                             }
                     </tr>
                 </tbody>
