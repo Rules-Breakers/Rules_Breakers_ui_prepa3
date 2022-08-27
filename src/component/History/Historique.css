@@ -1,40 +1,54 @@
-.Container2{
-    margin-top: 2%;
-    background-image:linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../Footer/image/footer.jpg);
-    width: 57vw;
-    box-shadow: 2px 2px 2px 2px black;
-    align-items: center;
-    justify-content: center;
-    margin-left: 22%;
+.Containing{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(2, 26, 48);
+    width: 400px;
+    background-color: rgb(2, 18, 32);
+    margin: 2% auto 6% auto;
 }
 
-.ttle{
-    text-align: center;
-    font-size: x-large;
-    margin-left : 0;
-    color: white;
+.history{
+    margin-left: 0%;
+}
+
+.contain{
+    border: 2px solid rgb(2, 26, 48);
+    width: 700px;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.right{
+    padding-left: 10%;
     padding-top: 5%;
-}
-
-h3{
-    margin-right: 6%;
-    border-bottom: 3px solid white;
-    width: 25vw;
-    text-align: center;
-    margin-left : 230px;
-    color: white;
-}
-
-.Timing{
-    border: 2px solid white;
-    width: 500px;
-    margin-left: 150px;
     padding-bottom: 5%;
 }
 
-.time{
-    font-size: smaller;
-    margin-left : 190px;
+.left{
+    padding-left: 15%;
+    padding-top: 10%;
+}
+
+tr{
+    border : 1px solid white;
+}
+
+.ttle{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
     color: white;
-    padding-top: 5%;
+}
+
+.tab{
+    color: white;
+}
+
+table{
+    overflow-y:scroll;
+    max-height:200px;
+    display:block;
+ }
+
+ ::-webkit-scrollbar { 
+    display: none; 
 }
