@@ -12,9 +12,7 @@ export function Pagination({setPage, page}) {
                     <span>&laquo;</span>
                 </a>
                 </li>
-                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                <li className="page-item"><a className="page-link" href="#">3</a></li>
+                <li className="page-item"><a className="page-link" href="#">{page+1}</a></li>
                 <li className="page-item">
                 <a className="page-link" href="#" aria-label="Next" onClick={()=>setPage(page+1)}>
                     <span>&raquo;</span>
