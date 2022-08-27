@@ -28,9 +28,9 @@ export function Table({children, setHead}) {
     }
     
     useEffect(()=>{
-        const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=100")
+        const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=5")
         promise.then((res)=>{
-            setData(res.data);
+            setData(res.data.sort((a,b)=> b.borrow - a.borrow));
             console.log(res.data);
         })
         .catch((err)=>{

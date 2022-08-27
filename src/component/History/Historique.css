@@ -1,41 +1,44 @@
 .Containing{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     border: 2px solid rgb(2, 26, 48);
-    width: 400px;
+    width: 80%;
     background-color: rgb(2, 18, 32);
     margin: 2% auto 6% auto;
+    font-size: 12px;
 }
-
+.button{
+    margin: 0.5% 0.5%;
+    border-radius: 4px;
+}
 .history{
     margin-left: 0%;
 }
 
 .contain{
     border: 2px solid rgb(2, 26, 48);
-    width: 700px;
-    margin-top: 100px;
-    margin-left: 300px;
+    width: 900px;
+    margin: 2% auto;
 }
 
 .right{
-    padding-left: 10%;
-    padding-top: 5%;
+    padding-top: 3%;
     padding-bottom: 5%;
+    padding-right: 2%;
 }
 
 .left{
-    padding-left: 15%;
-    padding-top: 10%;
+    padding: 2%;
 }
 
 tr{
     border : 1px solid white;
+
 }
 
 .ttle{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: x-large;
+    font-size: 17px;
     color: white;
 }
 
@@ -51,4 +54,8 @@ tr{
 
  ::-webkit-scrollbar { 
     display: none; 
+}
+
+.date{
+    color: white;
 }
