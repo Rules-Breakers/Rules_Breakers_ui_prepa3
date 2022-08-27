@@ -14,6 +14,7 @@ export default function HomePage () {
             <th className="p-2">Titre</th>
             <th className="p-2">Auteur</th>
             <th className="p-2">Category</th>
+            <th className="p-2">Status</th>
             <th className="p-2">Nombre de pages</th>
             {
                 head ? <th className="p-2">Nombres d'emprunt</th> : <th className="p-2">Actions</th>

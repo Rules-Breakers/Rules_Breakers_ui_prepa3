@@ -70,7 +70,6 @@ export function Table({children, setHead}) {
                 <option value="auteur">Auteur</option>
                 <option value="emprunt">Emprunt</option>
                 <option value="category">Category</option>
-                <option value="status">Status</option>
                 <option value="page">Page</option>
             </select>
             </div>
@@ -87,10 +86,10 @@ export function Table({children, setHead}) {
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category?.map((e,k) => (
                                     <p key={k}>{e.type}</p>
                                 ))}</td>
-                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.available}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.available.toString()}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
                                 {
-                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><UpdateButton attribut="button2" title = "Rendre" id={elt?.id} /></td>
+                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><UpdateButton attribut="button2" title = "Rendre" id={elt.id} /></td>
 
                                     }
                             </tr>
