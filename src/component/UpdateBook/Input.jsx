@@ -2,10 +2,10 @@ import React from "react";
 import "./UpdateBook.css";
 
 const Input = (props,) => {
-    const {value, handleChange} = props;
+    const {value, handleChange, type} = props;
     return(
         <>
-            <input type="text" className="input1" placeholder={value} onChange={(e) => handleChange(e.target.value)}/>
+            <input type={type} className="input1" placeholder={value} onChange={(e) => handleChange(e.target.value)}/>
         </>
     )
 }

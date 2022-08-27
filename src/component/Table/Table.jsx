@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import AddForm from "../AddBook/AddForm";
 import { Pagination } from "../Pagination/Pagination";
 import "./table.css"
+import UpdateForm from "../UpdateBook/UpdateForm";
 
 
 export function Table({children, setHead}) {
@@ -19,23 +21,44 @@ export function Table({children, setHead}) {
             pdf.save("download.pdf");  
           });  
       } */
-        const [showAdd , setShowAdd] = useState(false)
-        const close = ()=> setShowAdd(false)
+        const [name, setName] = useState("");
+        const [category, setCategory] = useState("");
+        const [author, setAuthor] = useState("");
+        const [pageSize, setPageSize] = useState("");
+        const [showAdd , setShowAdd] = useState(false);
+        const [showUpdate, setShowUpdate] = useState(false);
+        const [data, setData] = useState([]);
+        const close = ()=> setShowAdd(false);
+        const [page, setPage] = useState(0);
+        const closeUpdate = ()=> setShowUpdate(false);
     function filter(e) {
         if(e.target.value === 'emprunt'){
-            setEmprunt(true)
-            setHead(true)
+            setEmprunt(true);
+            setHead(true);
         }
         else{
-            setEmprunt(false)
-            setHead(false)
+            setEmprunt(false);
+            setHead(false);
         }
     }
+    
+    useEffect(()=>{
+        const promise = axios.get("https://virtserver.swaggerhub.com/Oniitsiky/librairies/1.0.1/books?page="+page+"&page_size=10")
+        promise.then((res)=>{
+            setData([res.data]);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }, [page])
     return(
         <>
         {
             showAdd ? <AddForm close={close} showAdd={showAdd} /> : <></>
         }
+            {
+                showUpdate ? <UpdateForm closeUpdate={closeUpdate} showUpdate={showUpdate}/>: <></>
+            }
            <div className="container" >
            <div className="btn-toolbar mb-2 mb-md-0 my-2" id="table-action">
             <div className="btn-group me-2" >
@@ -56,78 +79,21 @@ export function Table({children, setHead}) {
                     { children }
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        {
-                                emprunt ? <td>1</td> : <td><button className="button3">Emprunter</button><button className="button2">Rendre</button></td>
-                            }
-                    </tr>
+                    {
+                        data.map((elt, key) => (
+                            <tr key={key}>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.name}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.auteur}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category.map((e,k) => (
+                                    <p key={k}>{e.type}</p>
+                                ))}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
+                                {
+                                        emprunt ? <td>1</td> : <td><button className="button3" >Emprunter</button><button className="button2">Rendre</button></td>
+                                    }
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
             <Pagination />
