@@ -53,7 +53,7 @@ h2{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 100px 100px 600px 600px rgba(0,0,0,0.22);
-    animation: modal 2s linear;
+    animation: modal 1s linear;
     overflow: hidden;
     width: 768px;
     max-width: 100%;
