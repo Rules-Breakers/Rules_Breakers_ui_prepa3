@@ -2,8 +2,10 @@
     width: 20%;
     margin: auto;
     animation: zoomer 0.5s linear ;
+    border: 1px solid;
+    top: 40%;
+    left: 39%;
 }
-
 .rounded-circle{
     width: 50px;
     margin: auto;

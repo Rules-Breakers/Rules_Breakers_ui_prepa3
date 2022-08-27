@@ -44,7 +44,7 @@ return(
                 <Button type ="text" placeholder="USERNAME" setValue={setUsername} />
                 <Button type ="password" placeholder="PASSWORD" setValue={setPassword} />
 				<p>Already member , click<a href="#" color="yellow" onClick={()=>setChoose(true)} ><b> SIGN IN</b></a></p>
-				<button className="button">Sign Up</button>
+				<button className="button1">Sign Up</button>
 			</form>
 		</div>
 		<div className="overlay-container">
