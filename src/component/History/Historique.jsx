@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Historique.css';
 import '../bootstrap/bootstrap.css';
+import { Menu } from "../Navigation/menu";
+import axios from "axios";
+import { BASE_URL } from "../script/BaseUrl";
 
 function Historique(){
+    const [id, setId] = useState(1);
+    const [data, setData] = useState([]);
+
+    useEffect(()=>{
+        const promise = axios.get(BASE_URL+"/borrows/history/"+id)
+    })
     return (
         <>
+        <Menu />
         <div className="contain">
         <h2 className="history text-center">Historique des emprunts</h2>
           <div className="Containing">

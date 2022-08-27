@@ -10,20 +10,6 @@ import { UpdateButton } from "../Button/UpdateButton";
 
 export function Table({children, setHead}) {
     const [emprunt, setEmprunt] = useState(false);
-    /*function printDocument() {  
-        const input = document.getElementById('pdfdiv');  
-        html2canvas(input)  
-          .then((canvas) => {  
-            var imgWidth = 210;    
-            var imgHeight = canvas.height * imgWidth / canvas.width;    
-            const imgData = canvas.toDataURL('image/png');  
-            const pdf = new jsPDF();
-            var position = 0;    
-            pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);  
-            pdf.save("download.pdf");  
-          });  
-      } */
-        const [update, setUpdateData] = useState({});
         const [showAdd , setShowAdd] = useState(false);
         const [showUpdate, setShowUpdate] = useState(false);
         const [data, setData] = useState();
@@ -40,11 +26,12 @@ export function Table({children, setHead}) {
             setHead(false);
         }
     }
-
+    
     useEffect(()=>{
-        const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=1")
+        const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=100")
         promise.then((res)=>{
-            setData(res?.data);
+            setData(res.data);
+            console.log(res.data);
         })
         .catch((err)=>{
             console.log(err);
@@ -61,9 +48,9 @@ export function Table({children, setHead}) {
            <div className="container" >
            <div className="btn-toolbar mb-2 mb-md-0 my-2" id="table-action">
             <div className="btn-group me-2" >
-                <button type="button" className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAdd(true)} >Add</button>
-                <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
-                <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
+                <button type="button" className="btn btn-sm btn-outline-secondary" onClick={()=>setShowAdd(true)} >Ajouter</button>
+                <button type="button" className="btn btn-sm btn-outline-secondary">Partager</button>
+                <button type="button" className="btn btn-sm btn-outline-secondary">Exporter</button>
             </div>
             <select name="" id="" className="btn btn-sm btn-outline-secondary" onChange={filter}>
                 <option value="titre">Titre</option>
@@ -97,7 +84,7 @@ export function Table({children, setHead}) {
                     }
                 </tbody>
             </table>
-            <Pagination />
+            <Pagination setPage={setPage} page={page}/>
            </div>
         </>
     )

@@ -17,16 +17,13 @@ export function Menu() {
         <div className="justify-content-lg-start">
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <NavLink className="nav-link text-white" to="/">Dashboard</NavLink>
+              <NavLink className="nav-link text-white" to="/home"> Livres</NavLink>
             </li>
             <li>
-              <NavLink className="nav-link text-white" to="/"> Livres</NavLink>
+              <NavLink className="nav-link text-white" to="/history"> Historique</NavLink>
             </li>
             <li>
-              <NavLink className="nav-link text-white" to="/"> Historique</NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-link text-white" to="/">Settings</NavLink>
+              <NavLink className="nav-link text-white" to="/home">Settings</NavLink>
             </li>
           </ul>
         </div>
