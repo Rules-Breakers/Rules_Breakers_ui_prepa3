@@ -30,6 +30,7 @@ function List(){
         <>
           <div className="list">
             <div><h2 className="book">Book List</h2></div>
+            <button onClick={()=>getBack()} className='button2 my-3'>Sortir</button>
             <div className="list1">
             <table className="table-striped rounded-2 shadow text-center">
                 <thead>
@@ -58,7 +59,6 @@ function List(){
                 </tbody>
             </table>
             <Pagination/>
-            <button onClick={()=>getBack()} className='button1 btn2'>Terminé</button>
             </div>
           </div>
         </>
