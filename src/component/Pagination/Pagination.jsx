@@ -2,13 +2,13 @@ import React from "react";
 import "./pagination.css"
 
 
-export function Pagination() {
+export function Pagination({setPage, page}) {
     return(
         <>
             <div id="pagination">
             <ul className="pagination">
                 <li className="page-item">
-                <a className="page-link" href="#" aria-label="Previous">
+                <a className="page-link" href="#" aria-label="Previous" onClick={()=>setPage(page-1)}>
                     <span>&laquo;</span>
                 </a>
                 </li>
@@ -16,7 +16,7 @@ export function Pagination() {
                 <li className="page-item"><a className="page-link" href="#">2</a></li>
                 <li className="page-item"><a className="page-link" href="#">3</a></li>
                 <li className="page-item">
-                <a className="page-link" href="#" aria-label="Next">
+                <a className="page-link" href="#" aria-label="Next" onClick={()=>setPage(page+1)}>
                     <span>&raquo;</span>
                 </a>
                 </li>

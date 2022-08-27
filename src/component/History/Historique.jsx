@@ -1,10 +1,12 @@
 import React from "react";
 import './Historique.css';
 import '../bootstrap/bootstrap.css';
+import { Menu } from "../Navigation/menu";
 
 function Historique(){
     return (
         <>
+        <Menu />
         <div className="contain">
         <h2 className="history text-center">Historique des emprunts</h2>
           <div className="Containing">
