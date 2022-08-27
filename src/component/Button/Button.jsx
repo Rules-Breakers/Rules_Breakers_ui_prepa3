@@ -1,16 +1,22 @@
+import axios from "axios";
 import React from "react";
+import { BASE_URL } from "../script/BaseUrl";
 
 
-export function Button({title, attribut, setUpdateData, id}) {
+export function Button({title, attribut, id}) {
     function storeData(params) {
         let data = {
             id_book : id,
             borrowing_date : new Date().toLocaleDateString(),
             giving_back_date: ""
         }
-        setUpdateData(data)
-        console.log(data);
-
+        const promise = axios.post(BASE_URL+"/borrows", data)
+        promise.then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
     return(
         <>

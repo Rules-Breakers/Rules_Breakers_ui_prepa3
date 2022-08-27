@@ -25,7 +25,10 @@ export function Table({children, setHead}) {
         const [update, setUpdateData] = useState({});
         const [showAdd , setShowAdd] = useState(false);
         const [showUpdate, setShowUpdate] = useState(false);
-        const [data, setData] = useState([]);
+        const [data, setData] = useState([{
+            id: "1",
+            name: "test",
+        }]);
         const close = ()=> setShowAdd(false);
         const [page, setPage] = useState(0);
         const closeUpdate = ()=> setShowUpdate(false);
@@ -40,7 +43,7 @@ export function Table({children, setHead}) {
         }
     }
     
-    useEffect(()=>{
+    /*useEffect(()=>{
         const promise = axios.get("https://virtserver.swaggerhub.com/Oniitsiky/librairies/1.0.1/books?page="+page+"&page_size=10")
         promise.then((res)=>{
             setData([res.data]);
@@ -48,7 +51,7 @@ export function Table({children, setHead}) {
         .catch((err)=>{
             console.log(err);
         })
-    }, [page])
+    }, [page])*/
     return(
         <>
         {
@@ -82,12 +85,12 @@ export function Table({children, setHead}) {
                             <tr key={key}>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.name}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.auteur}</td>
-                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category.map((e,k) => (
-                                    <p key={k}>{e.type}</p>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category?.map((e,k) => (
+                                    <p key={k}>{e?.type}</p>
                                 ))}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
                                 {
-                                        emprunt ? <td>1</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} setUpdateData={setUpdateData}/><button className="button2">Rendre</button></td>
+                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><button className="button2">Rendre</button></td>
                                     }
                             </tr>
                         ))
