@@ -4,6 +4,7 @@ import AddForm from "../AddBook/AddForm";
 import { Pagination } from "../Pagination/Pagination";
 import "./table.css"
 import UpdateForm from "../UpdateBook/UpdateForm";
+import { Button } from "../Button/Button";
 
 
 export function Table({children, setHead}) {
@@ -21,10 +22,7 @@ export function Table({children, setHead}) {
             pdf.save("download.pdf");  
           });  
       } */
-        const [name, setName] = useState("");
-        const [category, setCategory] = useState("");
-        const [author, setAuthor] = useState("");
-        const [pageSize, setPageSize] = useState("");
+        const [update, setUpdateData] = useState({});
         const [showAdd , setShowAdd] = useState(false);
         const [showUpdate, setShowUpdate] = useState(false);
         const [data, setData] = useState();
@@ -45,7 +43,7 @@ export function Table({children, setHead}) {
     useEffect(()=>{
         const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=1")
         promise.then((res)=>{
-            setData(res.data);
+            setData(res?.data);
         })
         .catch((err)=>{
             console.log(err);
@@ -89,7 +87,7 @@ export function Table({children, setHead}) {
                                 ))}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
                                 {
-                                        emprunt ? <td>1</td> : <td><button className="button3" >Emprunter</button><button className="button2">Rendre</button></td>
+                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><button className="button2">Rendre</button></td>
                                     }
                             </tr>
                         ))

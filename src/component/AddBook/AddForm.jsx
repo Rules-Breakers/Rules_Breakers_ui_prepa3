@@ -18,7 +18,7 @@ const AddForm = (props) => {
             name : title,
             category : [
                 {
-                    id: category
+                    id_category: category
                 }
             ],
             auteur : author,
