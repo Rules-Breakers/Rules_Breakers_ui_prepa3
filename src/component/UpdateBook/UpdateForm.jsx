@@ -19,7 +19,7 @@ const UpdateForm = (props) => {
             author : author,
             page_size : pages
         }
-        const promise = axios.put("https://virtserver.swaggerhub.com/Oniitsiky/librairies/1.0.1/books", data);
+        const promise = axios.put("http://localhost:8080/books", data);
         promise.then((res) => {})
             .catch((err) => {
                 console.error(err);

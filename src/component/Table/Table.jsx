@@ -5,6 +5,7 @@ import { Pagination } from "../Pagination/Pagination";
 import "./table.css"
 import UpdateForm from "../UpdateBook/UpdateForm";
 import { Button } from "../Button/Button";
+import { UpdateButton } from "../Button/UpdateButton";
 
 
 export function Table({children, setHead}) {
@@ -39,7 +40,7 @@ export function Table({children, setHead}) {
             setHead(false);
         }
     }
-    
+
     useEffect(()=>{
         const promise = axios.get("http://localhost:8080/books?page="+page+"&page_size=1")
         promise.then((res)=>{
@@ -69,6 +70,7 @@ export function Table({children, setHead}) {
                 <option value="auteur">Auteur</option>
                 <option value="emprunt">Emprunt</option>
                 <option value="category">Category</option>
+                <option value="status">Status</option>
                 <option value="page">Page</option>
             </select>
             </div>
@@ -83,11 +85,13 @@ export function Table({children, setHead}) {
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.name}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.auteur}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category?.map((e,k) => (
-                                    <p key={k}>{e?.type}</p>
+                                    <p key={k}>{e.type}</p>
                                 ))}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.available}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
                                 {
-                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><button className="button2">Rendre</button></td>
+                                        emprunt ? <td>{elt?.borrow}</td> : <td><Button attribut="button3" title = "Emprunter" id={elt?.id} /><UpdateButton attribut="button2" title = "Rendre" id={elt?.id} /></td>
+
                                     }
                             </tr>
                         ))
