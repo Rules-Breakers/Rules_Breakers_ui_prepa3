@@ -5,16 +5,14 @@ import './App.css';
 import Login from './component/libs/Login';
 import HomePage from './pages/HomePage';
 import Historique from './component/History/Historique';
+import List from './component/BookList/List';
 
 function App() {
   return (
 <>
   <BrowserRouter>
     <Routes>
-      <Route path='/'
-        element={
-          <Login />       
-        }
+      <Route path='/' element={<Login />  }
       />
       <Route path='/home'
       element={<HomePage />}
@@ -22,6 +20,11 @@ function App() {
        <Route path='/history' 
         element={
           <Historique/>        
+        }
+      />
+      <Route path='/book'
+        element={
+          <List/>    
         }
       />
     </Routes>
