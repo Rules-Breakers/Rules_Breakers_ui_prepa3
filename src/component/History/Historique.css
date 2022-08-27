@@ -43,7 +43,7 @@ tr{
     color: white;
 }
 
-table{
+.history-table{
     overflow-y:scroll;
     max-height:200px;
     display:block;

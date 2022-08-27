@@ -13,7 +13,7 @@ function Historique(){
               <p className="ttle">Auteur</p>
             </div>
             <div className="right">
-              <table>
+              <table className="history-table">
                 <tbody>
                     <tr>
                         <td className="p-2 tab">2022-06-11</td>
