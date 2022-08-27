@@ -21,11 +21,11 @@ const AddForm = (props) => {
                     id: category
                 }
             ],
-            author : author,
+            auteur : author,
             page_size : pages
         }
         console.log(data);
-        const promise = axios.post("https://virtserver.swaggerhub.com/Oniitsiky/librairies/1.0.1/books", [data]);
+        const promise = axios.post("http://localhost:8080/books", [data]);
         promise.then((res) => {
             console.log(res.data);
         }).catch((err) => {

@@ -15,34 +15,9 @@ function Historique(){
             <div className="right">
               <table className="history-table">
                 <tbody>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2 tab">2022-06-11</td>
-                        <td className="p-2 tab">20h30</td>
-                    </tr>
+                    {
+                        
+                    }
                 </tbody>
             </table>
             </div>

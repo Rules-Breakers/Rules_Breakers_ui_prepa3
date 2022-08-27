@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './List.css';
 import { useNavigate } from "react-router";
 import { Pagination } from "../Pagination/Pagination";
+import axios from "axios";
 
 function List(){
     const navigate = useNavigate();
+    const [showAdd , setShowAdd] = useState(false);
+    const [showUpdate, setShowUpdate] = useState(false);
+    const [emprunt, setEmprunt] = useState(false);
+    const [data, setData] = useState();
+    const close = ()=> setShowAdd(false);
+    const [page, setPage] = useState(0);
     const getBack = ()=>{
         navigate('/')
     }
+    useEffect(()=>{
+        const promise = axios.get("http://localhost:8080/books/?page="+page+"&page_size=10")
+        promise.then((res)=>{
+            setData([res.data]);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }, [page])
     return(
         <>
           <div className="list">
@@ -22,48 +38,21 @@ function List(){
                    <th>Nombre d'emprunts</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
-                    <tr>
-                        <td className="p-2">item1</td>
-                        <td className="p-2">item2</td>
-                        <td className="p-2">item3</td>
-                        <td className="p-2">item4</td>
-                        <td className="p-2">item5</td>
-                    </tr>
+                {
+                        data?.map((elt, key) => (
+                            <tr key={key}>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.name}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.auteur}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category?.map((e,k) => (
+                                    <p key={k}>{e?.type}</p>
+                                ))}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
+                                {
+                                        emprunt ? <td>1</td> : <td><button className="button3" >Emprunter</button><button className="button2">Rendre</button></td>
+                                    }
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
             <Pagination/>
