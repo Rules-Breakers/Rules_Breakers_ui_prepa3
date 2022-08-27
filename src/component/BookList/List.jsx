@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import './List.css';
 import { useNavigate } from "react-router";
 import { Pagination } from "../Pagination/Pagination";
+import { Button } from "../Button/Button";
+import { UpdateButton } from "../Button/UpdateButton";
 import axios from "axios";
 
 function List(){
@@ -18,7 +20,7 @@ function List(){
     useEffect(()=>{
         const promise = axios.get("http://localhost:8080/books/?page="+page+"&page_size=10")
         promise.then((res)=>{
-            setData([res.data]);
+            setData(res.data);
         })
         .catch((err)=>{
             console.log(err);
@@ -34,6 +36,7 @@ function List(){
                    <th>Titre</th>
                    <th>Auteur</th>
                    <th>Catégorie</th>
+                    <th>Status</th>
                    <th>Nombre de page</th>
                    <th>Nombre d'emprunts</th>
                 </thead>
@@ -46,10 +49,9 @@ function List(){
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.category?.map((e,k) => (
                                     <p key={k}>{e?.type}</p>
                                 ))}</td>
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.available.toString()}</td>
                                 <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.page_size}</td>
-                                {
-                                        emprunt ? <td>1</td> : <td><button className="button3" >Emprunter</button><button className="button2">Rendre</button></td>
-                                    }
+                                <td className="p-2" onClick={() => setShowUpdate(true)}>{elt?.borrow}</td>
                             </tr>
                         ))
                     }
